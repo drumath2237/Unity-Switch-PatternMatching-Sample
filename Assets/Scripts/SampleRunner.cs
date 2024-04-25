@@ -19,7 +19,7 @@ namespace UnityCSharpAwesomeSyntax
         {
             _tokenSource = new CancellationTokenSource();
 
-            ISample sample = new SwitchAndPatternMatchingSample();
+            ISample sample = new FizzBuzzSample();
 
             await sample.RunAsync(_tokenSource.Token);
         }
