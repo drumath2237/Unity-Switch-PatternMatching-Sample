@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using UnityEngine;
 
 namespace UnityCSharpAwesomeSyntax.Samples
 {
     public class FizzBuzzSample : ISample
     {
-        public Task RunAsync(CancellationToken token)
+        public void Run()
         {
             var fizzbuzz = Enumerable.Range(0, 30)
                 .Select(x => x switch
@@ -21,8 +18,6 @@ namespace UnityCSharpAwesomeSyntax.Samples
                 .Aggregate((a, b) => a + "\n" + b);
 
             Debug.Log(fizzbuzz);
-
-            return Task.CompletedTask;
         }
     }
 }

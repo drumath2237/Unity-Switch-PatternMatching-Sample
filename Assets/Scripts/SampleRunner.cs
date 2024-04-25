@@ -1,33 +1,19 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using UnityCSharpAwesomeSyntax.Samples;
+﻿using UnityCSharpAwesomeSyntax.Samples;
 using UnityEngine;
 
 namespace UnityCSharpAwesomeSyntax
 {
     public interface ISample
     {
-        Task RunAsync(CancellationToken token);
+        void Run();
     }
 
     public class SampleRunner : MonoBehaviour
     {
-        private CancellationTokenSource _tokenSource;
-
-        private async Task Start()
+        private void Start()
         {
-            _tokenSource = new CancellationTokenSource();
-
             ISample sample = new FizzBuzzSample();
-
-            await sample.RunAsync(_tokenSource.Token);
-        }
-
-        private void OnDestroy()
-        {
-            _tokenSource.Cancel();
-            _tokenSource.Dispose();
+            sample.Run();
         }
     }
 }

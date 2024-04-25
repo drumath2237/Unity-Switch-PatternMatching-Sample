@@ -1,20 +1,12 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UnityCSharpAwesomeSyntax.Samples
 {
     public class SwitchAndPatternMatchingSample : ISample
     {
-        public Task RunAsync(CancellationToken token)
+        public void Run()
         {
-            if (token.IsCancellationRequested)
-            {
-                return Task.CompletedTask;
-            }
-
             Debug.Log("Hello");
-            return Task.CompletedTask;
         }
     }
 }
