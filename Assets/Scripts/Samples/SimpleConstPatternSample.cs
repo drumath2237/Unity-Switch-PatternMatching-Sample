@@ -1,15 +1,8 @@
-﻿using UnityEngine;
+﻿using UnityCSharpAwesomeSyntax.Types;
+using UnityEngine;
 
 namespace UnityCSharpAwesomeSyntax.Samples
 {
-    public enum WeatherType
-    {
-        Unknown,
-        Sunny,
-        Cloudy,
-        Rainy,
-    }
-
     public class SimpleConstPatternSample : ISample
     {
         private static bool TryParseWeather(string weatherString, out WeatherType result)
