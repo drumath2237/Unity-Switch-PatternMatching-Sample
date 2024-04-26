@@ -12,7 +12,7 @@ namespace UnityCSharpAwesomeSyntax
     {
         private void Start()
         {
-            ISample sample = new FizzBuzzSample();
+            ISample sample = new SimpleConstPatternSample();
             sample.Run();
         }
     }
